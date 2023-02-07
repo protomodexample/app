@@ -1,0 +1,8 @@
+version: v1
+plugins:
+  - plugin: buf.build/protocolbuffers/go:v1.28.1
+    out: gen/moduletwo
+    opt: paths=source_relative,Mproto/some/v1/some.proto=main/gen/moduleone/proto/some/v1,Mproto/someservice/v1/some.proto=gen/moduletwo/proto/someservice/v1
+  - plugin: buf.build/grpc/go:v1.2.0
+    out: gen/moduletwo
+    opt: paths=source_relative,Mproto/some/v1/some.proto=main/gen/moduleone/proto/some/v1,Mproto/someservice/v1/some.proto=gen/moduletwo/proto/someservice/v1
